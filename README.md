@@ -23,14 +23,20 @@ Then run:
 
 ```bash
 $ npm install
-$ ionic build
+$ ionic platform ios
 $ ionic emulate ios
 ```
 
-If you want to make changes to the sass, tweak scss/ionic.app.scss then run:
+If you want to make a single change to the sass, tweak scss/ionic.app.scss then run:
 
 ```bash
 $ gulp sass
+```
+
+If you want to run sass watch and have sass compile every time you hit save, then run
+
+```bash
+$ gulp watch
 ```
 
 More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/driftyco/ionic-cli) repo.
