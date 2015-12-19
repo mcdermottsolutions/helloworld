@@ -1,50 +1,10 @@
 angular.module('starter.services', [])
 
 .factory('Books', function($http) {
-  // Might use a resource here that returns a JSON array
-
-  // Some fake testing data
-  var books = [{
-    id: 0,
-    author: 'Jules Verne',
-    title: 'Around the World in 80 Days'
-  }, {
-    id: 1,
-    author: 'Tim Ferriss',
-    title: 'The Four Hour Workweek'
-  }, {
-    id: 2,
-    author: 'F. Scott Fitzgerald',
-    title: 'The Great Gatsby'
-  }];
-
-  // var promise = $http.get('http://crud-api-mcd-1.herokuapp.com/books');
-
-  /*
-  $http.get('http://crud-api-mcd-1.herokuapp.com/books').success(function(data){
-    console.log('yes');
-  };
-  */
-
-  // var books = $http.get('http://crud-api-mcd-1.herokuapp.com/books').success(function(data){
-  //   return data;
-  // };
-  // console.log(books);
-
-  /*
-  all: function() {
-    promise.success(data){
-      return books;
-    }
-  }
-  */
-
-
 
   return {
     all: function() {
       return $http.get('http://crud-api-mcd-1.herokuapp.com/books');
-      // return books;
     },
     remove: function(book) {
       books.splice(books.indexOf(book), 1);

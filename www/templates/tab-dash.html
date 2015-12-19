@@ -1,14 +1,24 @@
 <ion-view view-title="Dashboard">
   <ion-content>
-    <ion-list>
 
-      <ion-item ng-repeat="object in books">
-        <div class="list card" ng-repeat="book in object">
+    <ion-card ng-repeat="object in books">
+      <ion-item ng-repeat="book in object">
           <div class="item item-divider">{{book.author}}</div>
-          <div class="item item-body"><div>{{book.title}}</div></div>
-        </div>
+          <div class="item item-body">
+            <ion-card-content>
+              <div class="row">
+                <div class="col col-80">{{book.title}}</div>
+                <div class="col">
+                  <button class="button button-small button-assertive">
+                    <i class="icon ion-ios-trash"></i>
+                    <span>Delete</span>
+                  </button>
+                </div>
+              </div>
+            </ion-card-content>
+          </div>
       </ion-item>
+    </ion-card>
 
-    </ion-list>
   </ion-content>
 </ion-view>

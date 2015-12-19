@@ -2,13 +2,11 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, Books) {
 
-
   Books.all().success(function(data){
-    console.log(data);
     $scope.books = data;
-    $scope.remove = function(data) {
-      Books.remove(book);
-    };
+    // $scope.remove = function(data) {
+    //   Books.remove(book);
+    // };
   });
 
   $scope.remove = function(book) {
