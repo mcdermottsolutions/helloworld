@@ -1,6 +1,6 @@
 angular.module('starter.services', [])
 
-.factory('Books', function() {
+.factory('Books', function($http) {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
@@ -18,9 +18,33 @@ angular.module('starter.services', [])
     title: 'The Great Gatsby'
   }];
 
+  // var promise = $http.get('http://crud-api-mcd-1.herokuapp.com/books');
+
+  /*
+  $http.get('http://crud-api-mcd-1.herokuapp.com/books').success(function(data){
+    console.log('yes');
+  };
+  */
+
+  // var books = $http.get('http://crud-api-mcd-1.herokuapp.com/books').success(function(data){
+  //   return data;
+  // };
+  // console.log(books);
+
+  /*
+  all: function() {
+    promise.success(data){
+      return books;
+    }
+  }
+  */
+
+
+
   return {
     all: function() {
-      return books;
+      return $http.get('http://crud-api-mcd-1.herokuapp.com/books');
+      // return books;
     },
     remove: function(book) {
       books.splice(books.indexOf(book), 1);
@@ -34,6 +58,7 @@ angular.module('starter.services', [])
       return null;
     }
   };
+
 })
 
 .factory('Chats', function() {

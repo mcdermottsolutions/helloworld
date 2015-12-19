@@ -1,10 +1,20 @@
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, Books) {
-  $scope.books = Books.all();
+
+
+  Books.all().success(function(data){
+    console.log(data);
+    $scope.books = data;
+    $scope.remove = function(data) {
+      Books.remove(book);
+    };
+  });
+
   $scope.remove = function(book) {
     Books.remove(book);
   };
+
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {
