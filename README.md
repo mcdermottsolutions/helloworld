@@ -13,9 +13,16 @@ To run this app locally, make sure the `ionic` utility is installed:
 $ npm install -g ionic
 ```
 
+Then clone this repo and cd into it:
+```bash
+$ git clone https://github.com/mcdermottsolutions/helloworld.git
+$ cd helloworld
+```
+
 Then run:
 
 ```bash
+$ npm install
 $ ionic build
 $ ionic emulate ios
 ```
