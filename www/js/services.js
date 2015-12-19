@@ -1,5 +1,41 @@
 angular.module('starter.services', [])
 
+.factory('Books', function() {
+  // Might use a resource here that returns a JSON array
+
+  // Some fake testing data
+  var books = [{
+    id: 0,
+    author: 'Jules Verne',
+    title: 'Around the World in 80 Days'
+  }, {
+    id: 1,
+    author: 'Tim Ferriss',
+    title: 'The Four Hour Workweek'
+  }, {
+    id: 2,
+    author: 'F. Scott Fitzgerald',
+    title: 'The Great Gatsby'
+  }];
+
+  return {
+    all: function() {
+      return books;
+    },
+    remove: function(book) {
+      books.splice(books.indexOf(book), 1);
+    },
+    get: function(bookId) {
+      for (var i = 0; i < books.length; i++) {
+        if (books[i].id === parseInt(bookId)) {
+          return books[i];
+        }
+      }
+      return null;
+    }
+  };
+})
+
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 
@@ -22,14 +58,19 @@ angular.module('starter.services', [])
   }, {
     id: 3,
     name: 'Perry Governor',
-    lastText: 'Very nutritious.',
+    lastText: 'Did you hear the one about the pizza?',
     face: 'img/perry.png'
   }, {
     id: 4,
     name: 'Mike Harrington',
-    lastText: 'This is wicked good pizza.',
+    lastText: 'No.',
     face: 'img/mike.png'
-  }];
+  }, {
+    id: 5,
+    name: 'Perry Governor',
+    lastText: 'I probably shouldn\'t tell you, it\'s kind of cheesy.',
+    face: 'img/perry.png'
+  }, ];
 
   return {
     all: function() {
