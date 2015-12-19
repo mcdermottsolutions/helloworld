@@ -9,7 +9,7 @@ We recommend using the [Ionic CLI](https://github.com/driftyco/ionic-cli) to cre
 
 To run this app locally, make sure the `ionic` utility is installed:
 
-```bash
+```bash 
 $ npm install -g ionic
 ```
 
@@ -23,6 +23,7 @@ Then run:
 
 ```bash
 $ npm install
+$ ionic serve
 $ ionic platform ios
 $ ionic emulate ios
 ```
