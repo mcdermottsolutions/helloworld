@@ -6,8 +6,8 @@ angular.module('starter.services', [])
     all: function() {
       return $http.get('http://crud-api-mcd-1.herokuapp.com/books');
     },
-    remove: function(book) {
-      books.splice(books.indexOf(book), 1);
+    remove: function(id) {
+      $http.delete('http://crud-api-mcd-1.herokuapp.com/books/' + id);
     },
     get: function(bookId) {
       for (var i = 0; i < books.length; i++) {

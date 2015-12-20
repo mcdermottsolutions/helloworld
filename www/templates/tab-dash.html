@@ -9,7 +9,7 @@
               <div class="row">
                 <div class="col col-80">{{book.title}}</div>
                 <div class="col">
-                  <button class="button button-small button-assertive">
+                  <button ng-click="delete(object,$index,book._id)" class="button button-small button-assertive">
                     <i class="icon ion-ios-trash"></i>
                     <span>Delete</span>
                   </button>

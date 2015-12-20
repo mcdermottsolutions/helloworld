@@ -4,13 +4,11 @@ angular.module('starter.controllers', [])
 
   Books.all().success(function(data){
     $scope.books = data;
-    // $scope.remove = function(data) {
-    //   Books.remove(book);
-    // };
   });
 
-  $scope.remove = function(book) {
-    Books.remove(book);
+  $scope.delete = function(array,index,id) {
+    Books.remove(id);
+    array.splice(index, 1);
   };
 
 })
