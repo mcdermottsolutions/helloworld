@@ -9,6 +9,9 @@ angular.module('starter.services', [])
     remove: function(id) {
       $http.delete('http://crud-api-mcd-1.herokuapp.com/books/' + id);
     },
+    reset: function() {
+      $http.post('http://crud-api-mcd-1.herokuapp.com/reset');
+    },
     get: function(bookId) {
       for (var i = 0; i < books.length; i++) {
         if (books[i].id === parseInt(bookId)) {
@@ -16,8 +19,20 @@ angular.module('starter.services', [])
         }
       }
       return null;
+    },
+    add: function(title,author) {
+      return $http({
+        method: 'POST',
+        url: 'http://crud-api-mcd-1.herokuapp.com/books',
+        data: $.param({
+          title: title,
+          author: author
+        }),
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+      })
     }
-  };
+
+  }; //return
 
 })
 

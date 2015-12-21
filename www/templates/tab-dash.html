@@ -1,6 +1,10 @@
 <ion-view view-title="Books">
   <ion-content>
 
+    <ion-item>
+      <button ng-click="reset()" class="button button-medium button-calm">Reset Data</button>
+    </ion-item>
+
     <ion-card ng-repeat="object in books">
       <ion-item ng-repeat="book in object">
           <div class="item item-divider">{{book.author}}</div>
@@ -12,6 +16,37 @@
                   <button ng-click="delete(object,$index,book._id)" class="button button-small button-assertive">
                     <i class="icon ion-ios-trash"></i>
                     <span>Delete</span>
+                  </button>
+                </div>
+              </div>
+            </ion-card-content>
+          </div>
+      </ion-item>
+    </ion-card>
+
+    <ion-card>
+      <ion-item>
+          <div class="item item-divider">Add New Book</div>
+          <div class="item item-body">
+            <ion-card-content>
+              <div class="row">
+                <div class="col col-60">
+                  <div class="list">
+                    <label class="item item-input">
+                      <span class="input-label">Author</span>
+                      <input type="text" ng-model="form.author">
+                    </label>
+                    <label class="item item-input">
+                      <span class="input-label">Title</span>
+                      <input type="text" ng-model="form.title">
+                    </label>
+                  </div>
+                </div>
+                <div class="col" id="addBook">
+                  <br>
+                  <button ng-click="add(form)" class="button button-small button-balanced">
+                    <i class="icon ion-ios-trash"></i>
+                    <span>Add Book</span>
                   </button>
                 </div>
               </div>
