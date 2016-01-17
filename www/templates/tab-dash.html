@@ -11,7 +11,7 @@
           <div class="item item-body">
             <ion-card-content>
               <div class="row">
-                <div class="col col-80">{{book.title}}</div>
+                <div class="col col-75">{{book.title}}</div>
                 <div class="col">
                   <button ng-click="delete(object,$index,book._id)" class="button button-small button-assertive">
                     <i class="icon ion-ios-trash"></i>
@@ -33,12 +33,12 @@
                 <div class="col col-60">
                   <div class="list">
                     <label class="item item-input">
-                      <span class="input-label">Author</span>
-                      <input type="text" ng-model="form.author">
+                      <!-- <span class="input-label">Author</span> -->
+                      <input type="text" ng-model="form.author" placeholder="Author">
                     </label>
                     <label class="item item-input">
-                      <span class="input-label">Title</span>
-                      <input type="text" ng-model="form.title">
+                      <!-- <span class="input-label">Title</span> -->
+                      <input type="text" ng-model="form.title" placeholder="Title">
                     </label>
                   </div>
                 </div>

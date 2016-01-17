@@ -26,6 +26,8 @@ angular.module('starter.controllers', [])
     addPromise.then(function(){
       Books.all().success(function(data){
         $scope.books = data;
+        inputs.title = "";
+        inputs.author = "";
       });
     });
 
